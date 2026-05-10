@@ -15,10 +15,10 @@ function About() {
         {/* Header Hook */}
         <div className="border-b border-gray-800 pb-8 mb-12">
           <h2 className="text-4xl font-bold text-white tracking-tighter uppercase mb-2">
-            Personnel_Dossier
+            Personal Info
           </h2>
           <p className="text-green-500 text-sm tracking-widest uppercase">
-            Subject: Juan // Systems Engineer
+            Subject: Ezzuan // Systems Engineer
           </p>
         </div>
 
@@ -32,7 +32,7 @@ function About() {
               With a background in <span className="text-green-500">Systems Engineering</span>, I specialize in building streaming architectures and secure proxy servers that handle mission-critical data.
             </p>
             <p className="text-gray-500 text-sm italic">
-              "When I'm off the clock, I'm usually researching Capybara facts or tracking the latest updates in the Marvel Cinematic Universe."
+              "When I'm off the clock, I'm usually researching world tech facts or tracking the latest updates in the Marvel Cinematic Universe."
             </p>
           </div>
 

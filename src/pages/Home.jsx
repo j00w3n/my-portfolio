@@ -1,6 +1,20 @@
-import React from 'react';
 import profilePic from '../assets/profile.jpg';
+import React, { useState, useEffect } from 'react';
 function Home() {
+  const [text, setText] = useState("");
+  const fullText = "EZZUAN";
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    if (index < fullText.length) {
+      const timeout = setTimeout(() => {
+        setText((prev) => prev + fullText[index]);
+        setIndex((prev) => prev + 1);
+      }, 200); // Speed of typing
+      return () => clearTimeout(timeout);
+    }
+  }, [index]);
+
   return (
     <section className="min-h-[80vh] flex flex-col items-center justify-center bg-[#0a0a0a] text-gray-300 px-8">
       {/* The Main Container */}
@@ -15,7 +29,7 @@ function Home() {
         <div className="relative z-10 flex items-center gap-2 mb-10">
           <span className="text-green-500 font-mono text-xs">[PERSONAL_IDENTIFICATION_FILE_V1.1]</span>
           <div className="h-[1px] flex-grow bg-gray-800"></div>
-          <span className="text-xs font-mono text-gray-600 px-2 py-1 border border-green-900 bg-green-950 animate-pulse">ACTIVE</span>
+          <span className="text-xs font-mono text-white-600 px-2 py-1 border border-green-900 bg-green-950 animate-pulse">ACTIVE</span>
         </div>
 
         {/* Content Grid (Picture on Left, Text on Right) */}
@@ -40,7 +54,10 @@ function Home() {
           {/* Text Section */}
           <div className="text-center md:text-left">
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tighter uppercase leading-none">
-              I AM <span className="text-green-500">JUAN</span>
+              I AM <span className="text-green-500">
+                {text}
+                <span className="inline-block w-1 h-10 md:h-14 bg-green-500 ml-2 animate-cursor-blink"></span>
+              </span>
             </h1>
 
             <p className="text-xl md:text-2xl font-mono text-gray-400 mb-8 leading-tight">

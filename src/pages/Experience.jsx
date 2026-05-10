@@ -5,25 +5,25 @@ function Experience() {
     {
       company: "Vision Four Multimedia",
       role: "Systems & Software Engineer",
-      period: "2023 – PRESENT",
-      tech: "React | PHP | UDP Multicast | Linux",
+      period: "MAC 2023 – PRESENT",
+      tech: "LARAVEL | PHP | UDP Multicast | Linux",
       achievements: [
-        "Optimized enterprise streaming server architecture, achieving a 30% increase in throughput and system stability.",
+        "Architected and deployed a centralized Network Operations Center (NOC) dashboard to monitor 100+ nation-wide streaming nodes, achieving a 30% increase in system stability through automated health checks.",
+        "Engineered a Security Operations Center (SOC) visualization hub for real-time log analysis, improving threat detection and incident response protocols for enterprise clients.",
+        "Optimized enterprise streaming server architecture, achieving a 20% increase in throughput and system stability.",
         "Engineered secure promotional web ecosystems using modern React and specialized CDN configurations.",
         "Lead technical troubleshooter for high-priority client-side network and application failures.",
         "Implemented real-time UDP Multicast monitoring tools for automated network stream health checks."
       ]
     },
     {
-      company: "IMR Malaysia",
-      role: "Research Assistant (Intern)",
-      period: "2021",
-      tech: "Data Methodology | Parasitology",
+      company: "FTGR BIKE SDN BHD",
+      role: "IT Intern",
+      period: "AUG 2020 – SEP 2020",
+      tech: "E-Commerce | Shopify | HTML/CSS/JS",
       achievements: [
-        "Executed precision handling of mosquito colonies for vector-borne disease research.",
-        "Collaborated on parasitology studies requiring strict adherence to laboratory data protocols.",
-        "Managed field data collection cycles, ensuring high integrity for documentation and analysis."
-      ]
+        "Maintained the company’s Shopify-based e-commerce platform, updated product listings, managed orders, and troubleshot third-party app integrations.",
+        "Developed and deployed a dedicated promotional website using HTML, CSS, and JavaScript to support a niche product launch, resulting in increased customer inquiries and conversions."      ]
     }
   ];
 

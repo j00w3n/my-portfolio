@@ -66,3 +66,60 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+@keyframes zoom-in {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-in {
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+}
+
+.zoom-in {
+  animation-name: zoom-in;
+}
+
+.fade-in {
+  animation-name: fade-in;
+}
+html {
+  /* This reserves space for the scrollbar so the layout doesn't shift */
+  scrollbar-gutter: stable;
+  
+  /* Tactical look: Make the scrollbar dark to match your theme */
+  background-color: #0a0a0a;
+}
+
+/* Optional: Tactical thin scrollbar for Chrome/Safari/Edge */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #22c55e; /* Green matching your theme */
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #16a34a;
+}
+
+/* Hide default cursor on the whole site */
+html, body {
+  cursor: none !important;
+}
+
+/* Ensure buttons and links also don't show the default hand */
+a, button, [role="button"] {
+  cursor: none !important;
+}
