@@ -113,7 +113,7 @@ return (
 
         {/* --- TACTICAL MODAL --- */}
         {selectedProject && (
-<div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm will-change-transform">            <div 
+      <div className="fixed inset-0 bg-[#0a0a0a]/95 z-[100] flex items-center justify-center p-4">        <div 
               className="bg-[#111] border border-gray-700 max-w-4xl w-full max-h-[90vh] overflow-y-auto relative shadow-[0_0_50px_rgba(34,197,94,0.15)] animate-in fade-in zoom-in duration-300"
               onClick={(e) => e.stopPropagation()}
             >

@@ -7,6 +7,24 @@ function About() {
     { category: "Infrastructure", tools: "Linux, Azure, UDP Multicast, Nginx" },
     { category: "Database", tools: "PostgreSQL, MySQL, SQL Server" }
   ];
+  const education = [
+  {
+    institution: "Universiti Teknologi MARA (UiTM)",
+    degree: "Bachelor of Computer Networks (Hons.)",
+    duration: "2021 - 2023",
+    specialization: "Computer Networking",
+    details: "Specialized in enterprise networking",
+    finalyearproject: "Secret data Transfer using Steganography and Hybrid Encryption",
+    cgpa: "3.5"
+  },
+  {
+  
+    institution: "Universiti Teknologi MARA (UiTM)",
+    degree: "Diploma in Computer Science",
+    duration: "2018 - 2021",
+    cgpa: "3.7",
+    details: "Solidified core programming logic, database management, and operating system fundamentals. Specialized in the basics of software development and algorithm design."  }
+];
 
   return (
     <section className="min-h-screen bg-[#0a0a0a] text-gray-300 py-16 px-8 font-mono">
@@ -49,7 +67,48 @@ function About() {
             </ul>
           </div>
         </div>
+      <section className="my-16">
+        {/* Header Section */}
+        <div className="flex items-center gap-4 mb-8">
+          <div className="h-[1px] flex-grow bg-gray-800"></div>
+          <h2 className="text-2xl font-bold tracking-tighter text-white uppercase italic">
+            Academic_Credentials
+          </h2>
+          <div className="h-[1px] w-12 bg-green-500"></div>
+        </div>
 
+        <div className="space-y-8">
+          {education.map((edu, index) => (
+            <div key={index} className="relative pl-8 border-l border-gray-800 group hover:border-green-500 transition-all duration-300">
+              
+              {/* Animated Status Dot */}
+              <div className="absolute -left-[5px] top-0 w-2 h-2 bg-gray-800 group-hover:bg-green-500 rounded-full transition-colors"></div>
+              
+              <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-2 gap-2">
+                <h3 className="text-xl font-bold text-white group-hover:text-green-400 transition-colors">
+                  {edu.institution}
+                </h3>
+                <span className="text-[10px] font-mono text-green-500 border border-green-500/30 bg-green-500/5 px-2 py-1 rounded inline-block w-fit">
+                  PERIOD // {edu.duration}
+                </span>
+              </div> {edu.cgpa && <span className="text-gray-600">// CGPA: {edu.cgpa}</span>}
+              
+              <p className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">
+                {edu.degree} {edu.specialization && <span className="text-gray-600">// {edu.specialization}</span>}
+              </p>
+              
+              <p className="text-xs text-gray-500 max-w-2xl leading-relaxed font-mono">
+                {edu.details}
+              </p>
+              {edu.finalyearproject && (
+                <p className="text-sm text-green-400 max-w-2xl leadi      ng-relaxed font-bold border-l-2 border-green-500 pl-3 mt-3">
+                  ★ Final Year Project: {edu.finalyearproject}
+                </p>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
         {/* Technical Skills Terminal */}
         <div className="border border-gray-800 bg-black p-6 rounded-sm">
           <div className="flex gap-2 mb-6">

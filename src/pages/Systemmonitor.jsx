@@ -15,7 +15,7 @@ const [isBlinking, setBlinking] = useState(false);
       interval = setInterval(() => {
         const mockLoad = Math.floor(Math.random() * 100);
         setCpuLoad(mockLoad);
-      }, 2000); // Update setiap 2 saat
+      }, 3000); // Update setiap 2 saat
     }
 
     // 2. Cleanup: Stop the monitor
