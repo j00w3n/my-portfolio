@@ -6,6 +6,7 @@ import Projects from './pages/Projects';
 import Experience from './pages/Experience';
 import Contact from './pages/Contact';
 import NavBar from './components/NavBar';
+import Systemmonitor from './pages/Systemmonitor';
 import CustomCursor from './components/Cursor';
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/experience" element={<Experience />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/systemmonitor" element={<Systemmonitor />} />
         </Routes>
       </main>
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 
 const projects = [
   {
@@ -45,8 +45,17 @@ const projects = [
 
 function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
+  const [searchTerm, setSearchTerm] = useState("");
+ // tapis projects berdasarkan search term di title, tech, atau tags
+  const filteredProjects = useMemo(() => {
+    return projects.filter(project => 
+      project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      project.tech.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      project.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
+    );
+  }, [searchTerm]);
 
-  // Close modal on escape key
+  // close modal using keyboeard ESC
   React.useEffect(() => {
     const handleEsc = (event) => {
       if (event.keyCode === 27) setSelectedProject(null);
@@ -55,46 +64,52 @@ function Projects() {
     return () => window.removeEventListener('keydown', handleEsc);
   }, []);
 
-  return (
+return (
     <section className="min-h-screen bg-[#0a0a0a] text-gray-300 py-16 px-8 font-mono">
       <div className="max-w-6xl mx-auto">
         
-        {/* Header */}
-        <div className="mb-12 border-l-4 border-green-500 pl-4">
-          <h2 className="text-4xl font-bold tracking-tighter text-white uppercase">Project_Log</h2>
-          <p className="text-sm text-green-500 tracking-widest uppercase">Systems_Engineering_Records_V4.0</p>
+        <div className="mb-12 border-l-4 border-green-500 pl-4 flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div>
+            <h2 className="text-4xl font-bold tracking-tighter text-white uppercase">Project_Log</h2>
+            <p className="text-sm text-green-500 tracking-widest uppercase font-bold">Querying_Database...</p>
+          </div>
+
+          {/* SEARCH TERMINAL */}
+          <div className="relative w-full md:w-80 group">
+            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-green-500 font-bold">{`>`}</span>
+            <input 
+              type="text"
+              placeholder="SEARCH_BY_TECH_OR_NAME..."
+              className="w-full bg-black border border-gray-800 py-2 pl-8 pr-4 text-xs focus:outline-none focus:border-green-500 transition-colors placeholder:text-gray-700 text-green-400"
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+            <div className="absolute bottom-0 left-0 h-[1px] bg-green-500 w-0 group-focus-within:w-full transition-all duration-500"></div>
+          </div>
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project) => (
-            <div 
-              key={project.id} 
-              onClick={() => setSelectedProject(project)}
-              className="group cursor-pointer border border-gray-800 bg-[#111] p-6 hover:border-green-500 transition-all duration-300 relative overflow-hidden"
-            >
-              <div className="flex justify-between items-start mb-4">
-                <span className="text-[10px] text-green-500 px-2 py-1 border border-green-900 bg-green-950 font-bold tracking-tighter">
-                  {project.status}
-                </span>
-                <span className="text-gray-600 text-[10px]">// {project.id}</span>
+        {/* RESULTS GRID */}
+        {filteredProjects.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-in fade-in duration-500">
+            {filteredProjects.map((project) => (
+              <div 
+                key={project.id} 
+                onClick={() => setSelectedProject(project)}
+                className="group cursor-pointer border border-gray-800 bg-[#111] p-6 hover:border-green-500 transition-all duration-300"
+              >
+                {/* ... (Keep your card content the same) ... */}
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-green-400">{project.title}</h3>
+                <p className="text-xs text-gray-500 mb-4">{project.tech}</p>
+                <div className="text-[10px] text-green-600 uppercase font-bold">View_Details_→</div>
               </div>
-              
-              <h3 className="text-xl font-bold text-white mb-2 group-hover:text-green-400">
-                {project.title}
-              </h3>
-              
-              <p className="text-sm text-gray-500 mb-6 leading-tight">
-                {project.shortDesc}
-              </p>
-
-              <div className="flex items-center justify-between mt-auto">
-                <span className="text-[9px] text-gray-600 uppercase tracking-widest font-bold">Details_Required?</span>
-                <span className="text-green-500 text-xs group-hover:translate-x-1 transition-transform">→</span>
-              </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        ) : (
+          /* EMPTY STATE */
+          <div className="border border-dashed border-gray-800 p-20 text-center">
+            <p className="text-red-900 font-bold mb-2">ERROR: NO_RECORDS_FOUND</p>
+            <p className="text-gray-600 text-xs">Search query "{searchTerm}" returned 0 results from local_db.</p>
+          </div>
+        )}
 
         {/* --- TACTICAL MODAL --- */}
         {selectedProject && (

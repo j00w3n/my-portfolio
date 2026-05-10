@@ -11,6 +11,7 @@ function NavBar() {
     { name: 'PROJECTS', path: '/projects' },
     { name: 'EXPERIENCE', path: '/experience' },
     { name: 'CONTACT', path: '/contact' },
+    { name: 'SYS_MONITOR', path: '/systemmonitor' }
   ];
 
   const toggleMenu = () => setIsOpen(!isOpen);
