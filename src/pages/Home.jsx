@@ -30,7 +30,7 @@ function Home() {
               
               {/* Actual Image */}
               <img 
-                src="/profile.jpg"  // Make sure your file is in /public/
+                src={profilePic}  // Make sure your file is in /public/
                 alt="Juan // Systems Engineer Profile" 
                 className="w-[180px] h-[180px] object-cover filter grayscale hover:grayscale-0 transition-all duration-300"
               />
