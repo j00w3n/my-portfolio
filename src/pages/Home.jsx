@@ -1,5 +1,5 @@
 import React from 'react';
-import profilePic from './assets/profile.jpg';
+import profilePic from '../assets/profile.jpg';
 function Home() {
   return (
     <section className="min-h-[80vh] flex flex-col items-center justify-center bg-[#0a0a0a] text-gray-300 px-8">
