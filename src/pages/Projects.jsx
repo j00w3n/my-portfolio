@@ -7,7 +7,7 @@ const projects = [
     tech: "React | PHP | UDP Multicast",
     shortDesc: "Real-time nation-wide network node health monitoring.",
     fullDesc: "Engineered a high-availability Network Operations Center (NOC) monitor utilizing direct UDP Multicast for sub-second data ingestion. The system provides real-time visualization of node health across Malaysia, featuring a custom 'Tactical Notification Engine' for instant failure alerts.",
-    image: "/src/assets/nocdashboard.jpg", 
+    image: "../assets/nocdashboard.jpg", 
     status: "MISSION_CRITICAL",
     tags: ["Infrastructure", "Real-time", "Network"]
   },
@@ -17,7 +17,7 @@ const projects = [
     tech: "Laravel | PostgreSQL | Tailwind",
     shortDesc: "Security Operations Center threat visualization hub.",
     fullDesc: "Designed and implemented a Security Operations Center (SOC) interface to visualize system logs and security incidents. Focused on rapid incident response UI and high-integrity data auditing for enterprise security teams.",
-    image: "/src/assets/socdashboard.png",
+    image: "../assets/socdashboard.png",
     status: "SECURE",
     tags: ["Cybersecurity", "Auditing", "Defense"]
   },
@@ -27,7 +27,7 @@ const projects = [
     tech: "Spring Boot | Shaka Player",
     shortDesc: "Secure DRM content protection proxy.",
     fullDesc: "Developed a robust proxy server using Spring Boot to manage Widevine DRM licenses. Ensured secure content delivery and seamless playback integration with Shaka Player for encrypted streaming assets.",
-    image: "/src/assets/widevineproject.png",
+    image: "../assets/widevineproject.png",
     status: "OPERATIONAL",
     tags: ["Streaming", "DRM", "Security"]
   },
@@ -37,7 +37,7 @@ const projects = [
     tech: "PHP | Multilingual | CMS",
     shortDesc: "Multilingual streaming news architecture.",
     fullDesc: "Architected a high-traffic news platform supporting real-time streaming and dynamic language localizations. Focused on database optimization for fast content delivery across diverse regional locales.",
-    image: "/src/assets/vivnewsmyproject.png",
+    image: "../assets/vivnewsmyproject.png",
     status: "ACTIVE",
     tags: ["PHP", "Scalability", "CMS"]
   }
